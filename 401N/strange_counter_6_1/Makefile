@@ -1,4 +1,4 @@
-TARGET:=BTN2
+TARGET:=STRANGE_COUNTER
 
 all:
 	@iverilog *.v -o $(TARGET).out && vvp $(TARGET).out
