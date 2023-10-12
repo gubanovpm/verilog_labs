@@ -1,4 +1,4 @@
-all: WGMT AGNT AGNTD AGNMT AGSAW_YX ACC2mE ACCM Sch_Lab402d MEG_BL
+all: WGMT AGNT AGNTD AGNMT AGSAW_YX ACC2mE ACCM Sch_Lab402d MEG_BL Sch_Lab402
 
 WGMT:
 	iverilog $@_tb.v -o $@.out && vvp $@.out
@@ -33,6 +33,10 @@ Sch_Lab402d:
 	@echo "-----------Make $@ complete-----------"
 
 MEG_BL:
+	iverilog $@_tb.v -o $@.out && vvp $@.out
+	@echo "-----------Make $@ complete-----------"
+
+Sch_Lab402:
 	iverilog $@_tb.v -o $@.out && vvp $@.out
 	@echo "-----------Make $@ complete-----------"
 

@@ -10,14 +10,14 @@ module test_module;
 	MEG_BL uut(.clk(clk), .Q(Q),
 						 .st(st),
 						 .Inp(Inp),
-						 .REF(REF), 
+						 .REF(clk), 
 						 .rst(rst));
 	
 	// sync signal generator
 	parameter Tclk = 20; // period sync sig = 20 ns
 	always begin
 		clk = 0; #(Tclk/2);
-		clk = 1; #(Tclk/2);
+		clk = 1; Inp = 1 - Inp; #(Tclk/2);
 	end
 
 	initial begin
@@ -26,8 +26,8 @@ module test_module;
     $dumpvars(0, test_module);
 		rst = 0; #100;
 		rst = 1; #100;
-		rst = 0; Inp = 1; REF = 1; #100;
-		Inp = 0; #100;
+		rst = 0; Inp = 1; st = 1; #100;
+		Inp = 0; st = 0; #100;
 		REF = 0; #10000;
 		$finish();
 	end
