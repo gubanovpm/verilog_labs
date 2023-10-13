@@ -55,6 +55,11 @@ module Sch_Lab402 ( input BTN0,				output wire JA1,
 	wire [10:0] ACC;
 	wire [3:0] q;
 
+	assign JB7  = q[0];
+	assign JB8  = q[1];
+	assign JB9  = q[2];
+	assign JB10 = q[3];
+
 	assign JA2 = ceo;
 	assign JA3 = PW;
 

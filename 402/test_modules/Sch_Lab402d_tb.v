@@ -47,12 +47,12 @@ module test_module;
 	end
 
 	initial begin
-		SW  = 8'hE4;	// X = 14, Y = 4
-		QMx = 8'd60;	// set QMx == N
+		SW  = 8'hA4;	// X = 14, Y = 4
+		QMx = 8'd125;	// set QMx == N
 		$dumpfile("Sch_Lab402d.vcd");
     $dumpvars(0, test_module);
 		BTN0 = 0; #100;
-		BTN0 = 1; #100;
+		BTN0 = 1; #1000000;
 		BTN0 = 0; #10000000;
 		$finish();
 	end
