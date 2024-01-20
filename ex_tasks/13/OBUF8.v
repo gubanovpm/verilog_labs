@@ -1,0 +1,1 @@
+module OBUF8(input [7:0] SW, output wire [7:0] LED); assign LED = {SW}; endmodule
