@@ -1,0 +1,48 @@
+NET "F50MHz" LOC = "B8" ; #F50MHz
+# Аноды
+NET "AN<0>" LOC = "F17" ; #AN0
+NET "AN<1>" LOC = "H17" ; #AN1
+NET "AN<2>" LOC = "C18" ; #AN2
+NET "AN<3>" LOC = "F15" ; #AN3
+# Сегменты
+NET "seg<0>" LOC = "L18" ; #CA
+NET "seg<1>" LOC = "F18" ; #CB
+NET "seg<2>" LOC = "D17" ; #CC
+NET "seg<3>" LOC = "D16" ; #CD
+NET "seg<4>" LOC = "G14" ; #CE
+NET "seg<5>" LOC = "J17" ; #CF
+NET "seg<6>" LOC = "H14" ; #CG
+NET "seg_P" LOC = "C17" ; #CP
+# Светодиоды
+NET "LED0" LOC = "J14" ; #en_rx_byte
+NET "LED7" LOC = "R4" ; # en_tx
+# Кнопки
+NET "BTN0" LOC = "B18" ; # RESET
+NET "BTN3" LOC = "H13" ; Inp <- TXD
+# COM порт
+NET "UTXD" LOC = "P9" ; #UTXD(NESYX2)->RXD (COM port PC)
+NET "URXD" LOC = "U6" ; #URXD(NEXYS2)<-TXD (COM port PC)
+# Переключатели
+NET "SW<0>" LOC = "G18" ; # tx_dat[0]
+NET "SW<1>" LOC = "H18" ; # tx_dat[1]
+NET "SW<2>" LOC = "K18" ; # tx_dat[2]
+NET "SW<3>" LOC = "K17" ; # tx_dat[3]
+NET "SW<4>" LOC = "L14" ; # tx_dat[4]
+NET "SW<5>" LOC = "L13" ; # tx_dat[5]
+NET "SW<6>" LOC = "N17" ; # tx_dat[6]
+NET "SW<7>" LOC = "R17" ; # tx_dat[7]
+# Выводы передатчика
+NET "JB2" LOC = "R18" ; # en_tx (передатчика)
+NET "JB3" LOC = "R15" ; # T_start (передатчика)
+NET "JB4" LOC = "T17" ; # T_dat (передатчика)
+NET "JB7" LOC = "P17" ; # T_stop (передатчика)
+NET "JB8" LOC = "R16" ; # ce_tact (передатчика)
+# Выводы приемника
+NET "JC1" LOC = "G15" ; # RXD (приемника)
+NET "JC2" LOC = "J16" ; # en_rx_byte (приемника)
+NET "JC3" LOC = "G13" ; # T_start(приемника)
+NET "JC4" LOC = "H16" ; # T_da t(приемника)
+NET "JC7" LOC = "H15" ; # T_stop (приемника)
+NET "JC8" LOC = "F14" ; # ce_tact (приемника)
+NET "JD3" LOC = "N18" ; # Дополнительный выход TXD
+NET "JD4" LOC = "P18" ; # Дополнительный вход RXD
