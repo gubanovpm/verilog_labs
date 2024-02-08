@@ -66,16 +66,19 @@ module SPI_MASTER(input st,         output wire LOAD,
 
 endmodule
 
-module RS_T(input R, output wire Q,
+module RS_T(input R, output reg Q = 0,
             input S,
             input clk);
 
-  assign q_n = ~(S | Q);
-  assign Q   = ~(R | q_n);
+  reg q_n = 0;
+  always @(posedge clk) begin
+    q_n = ~(S | Q);
+    Q   <= ~(R | q_n);
+  end
 
 endmodule
 
-module T_T(input T, output reg Q,
+module T_T(input T, output reg Q = 0,
            input R,
            input clk);
 
@@ -132,7 +135,7 @@ module MASTER_SDVIG(input clk, output wire [`m-1:0] sr_MTX,
                     input ce, 
                     input L, 
                     input [`m-1:0] DI);
-  reg [`m-1:0] tmp;
+  reg [`m-1:0] tmp = 0;
   assign sr_MTX = tmp;
 
   always @(posedge clk) begin

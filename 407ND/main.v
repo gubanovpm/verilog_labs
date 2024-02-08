@@ -6,7 +6,7 @@
 `include "SPI_SLAVE.v"
 
 module main(input clk,     output wire JC2,
-            input BT0,     output wire JB1,
+            input BTN0,     output wire JB1,
 						input[2:0] SW, output wire JB2,
 						input JC1,     output wire JB3,
 						               output wire JC3,
