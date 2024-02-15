@@ -57,9 +57,9 @@ module SPI_MASTER(input st,         output wire LOAD,
   MASTER_SDVIG MASTER_SDVIG(.clk(clk), .sr_MTX(sr_MTX),
                             .ce(ce_tact),
                             .L(LOAD),
-                            .DI(DO));
+                            .DI(DI));
 
-  assign MOSI = sr_MTX[0];
+  assign MOSI = sr_MTX[`m-1];
 
   BUFFER BUFFER(.SLI(sr_MRX), .MRX_DAT(DO),
                 .clk(LOAD));  

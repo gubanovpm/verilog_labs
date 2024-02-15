@@ -32,7 +32,7 @@ assign LED0 = ~LOAD;
 DISPLAY DISPLAY(.clk(clk),       .ce1ms(JC4),
 								.dat(DISPL_dat), .AN(AN),
 								                 .seg(seg),
-																 .seg_P(seg_p));
+																 .seg_P(seg_P));
 
 Gen_st Gen_st(.clk(clk), .ce_st(ce_st));
 
@@ -48,7 +48,7 @@ SORCE_DAT SORCE_DAT(.MASTER_dat(MTX_DAT),
 SPI_MASTER SPI_MASTER(.st(ce_st),   .LOAD(JB1),
 											.clk(clk),    .SCLK(JB2),
 											.MISO(JB4),   .MOSI(JB3),
-											.clr(BT0),    .ce(ce),
+											.clr(BTN0),    .ce(ce),
 											.DI(MTX_DAT), .ce_tact(JC3),
 																		.cb_bit(cb_bit),
 																		.sr_MTX(sr_MTX),
@@ -59,6 +59,6 @@ SPI_SLAVE SPI_SLAVE(.DI(STX_DAT), .DO(SRX_DAT),
                     .sclk(JB2),   .sr_STX(sr_STX),
 										.MOSI(JB3),   .sr_SRX(sr_SRX),
 										.load(LOAD),  .MISO(JB4),
-										.clr(BT0));
+										.clr(BTN0));
 
 endmodule
