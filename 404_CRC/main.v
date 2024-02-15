@@ -11,6 +11,7 @@ module main(input clk,      output wire seg_P,
                             output wire UTXD,
                             output wire JD3,
                             output wire JC1,
+                            output wire JB1,
                             output wire JB2,
                             output wire JB3,
                             output wire JB4);
