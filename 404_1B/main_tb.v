@@ -1,3 +1,5 @@
+`timescale 1ns/1ns
+
 `include "main.v"
 
 module main_tb();
@@ -36,7 +38,18 @@ module main_tb();
   initial begin
 		$dumpfile("main_tb.vcd");
     $dumpvars(0, main_tb);
-    #1000000;
+    URXD = 1; JD4 = 1;
+    SW = 7'b1010101;
+    #1000010
+    #26000 
+    #26000 URXD = 0;
+    #26000 URXD = 1;
+    #234000 URXD = 0;
+    #26000 URXD = 1;
+    #26000 URXD = 0;
+    #26000 URXD = 1;
+    #100000 
+
 		$finish();
 	end
 
